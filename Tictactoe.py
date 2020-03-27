@@ -1,9 +1,9 @@
 XO = ['#','X','O','X','O','X','O','X','O','X']
-display=['0','1','2','3','4','5','6','7','8','9']
+display=['#','1','2','3','4','5','6','7','8','9']
 play=['_','_','_','_','_','_','_','_','_','_']
 # print a display board
 def display_board(board):
-    print('This is the display board')
+    print('This is the current board')
     print(board[1]+'/'+board[2]+'/'+board[3])
     print(board[4]+'/'+board[5]+'/'+board[6])
     print(board[7]+'/'+board[8]+'/'+board[9])
@@ -12,36 +12,51 @@ display_board(display)
 
 print('_ _ _')
 
-#display player board
-def play_board(board):
-    print('This is the current board')
-    print(board[1]+'/'+board[2]+'/'+board[3])
-    print(board[4]+'/'+board[5]+'/'+board[6])
-    print(board[7]+'/'+board[8]+'/'+board[9])
 
-play_board(play)
-
+def win():
+    column_1=[1,4,7]
+    column_2=[2,5,8]
+    column_3=[3,6,9]
+    for i in column_1:
+        if display[i]==display[i+1]==display[i+2] in 'XO' :
+            print('X has won')
+    for i in column_2:
+        if display[i]==display[i-1]==display[i+1] in 'XO':
+            print('X has won')
+    for i in column_3:
+        if display[i]==display[i-2]==display[i-3] in 'XO':
+            print('X has won')
+win()
 
 
 
 
 empty='_'
-#set marker location
+#set mark location
 def place_marker(board, value):
-    move=int(input("Where would you like to place your marker X?"))
-    while move<1 or move>9:
+    move=input("Where would you like to place your mark X?")
+    while int(move) not in range(1,10):
         print('Please enter proper value')
-        move=int(input("Where would you like to place your marker X?"))
-    if play[move] is empty:
-        play[move]='X'
-        display[move]='X'
-    print(play)
-    display_board(play)
+        move=input("Where would you like to place your mark X?")
+    if display[int(move)] in 'XO':
+        print('This place is full, please choose another position')
+    elif display[int(move)] in range(9):
+        display[int(move)]='X'
+    print(display)
+    display_board(display)
 
-place_marker(play,1)
-print(play)
+#place_marker(display,1)
+#print(display)
 
 
-def win()
-    if display[1][2][3]='X'
-    print('X has won')
+def place_marker_again():
+    while range(10) in display[1:]:
+        place_marker(display,1)
+
+
+
+#game on
+while range(10) in display():
+    place_marker(display,1)
+    win()
+    print(display)
