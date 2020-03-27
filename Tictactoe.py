@@ -1,39 +1,47 @@
-board = ['#','X','O','X','O','X','O','X','O','X']
+XO = ['#','X','O','X','O','X','O','X','O','X']
+display=['0','1','2','3','4','5','6','7','8','9']
+play=['_','_','_','_','_','_','_','_','_','_']
 # print a display board
 def display_board(board):
+    print('This is the display board')
+    print(board[1]+'/'+board[2]+'/'+board[3])
+    print(board[4]+'/'+board[5]+'/'+board[6])
+    print(board[7]+'/'+board[8]+'/'+board[9])
 
-    print(board[1]+board[2]+board[3]+'\n'+board[4]+board[5]+board[6]+'\n'+board[7]+board[8]+board[9])
+display_board(display)
 
-display_board(board)
+print('_ _ _')
 
+#display player board
+def play_board(board):
+    print('This is the current board')
+    print(board[1]+'/'+board[2]+'/'+board[3])
+    print(board[4]+'/'+board[5]+'/'+board[6])
+    print(board[7]+'/'+board[8]+'/'+board[9])
 
-
-
-#Ask player to choose marker and order to play.
-def player_input():
-    tic=input("You are now Player_1. Do you want to choose 'X' or 'O'?(Enter 'X' or 'O'):")
-    while tic.upper() != 'X' or 'O':
-        tic=input("You are now Player_1. Do you want to choose 'X' or 'O'?(Enter 'X' or 'O'):")
-    if tic=='X':
-        tac=='O'
-    else:
-        tac=='X'
-    print('Player_1 is '+ tic.upper())
-    print('Player_2 is' + tac.upper())
-
-player_input()
+play_board(play)
 
 
 
+
+
+empty='_'
 #set marker location
 def place_marker(board, value):
     move=int(input("Where would you like to place your marker X?"))
-    board[int(move)]='X'
-    display_board()
+    while move<1 or move>9:
+        print('Please enter proper value')
+        move=int(input("Where would you like to place your marker X?"))
+    if play[move] is empty:
+        play[move]='X'
+        display[move]='X'
+    print(play)
+    display_board(play)
 
-place_marker()
+place_marker(play,1)
+print(play)
 
 
-
-def input1(eg):
-    return display_board(board[int(eg)])
+def win()
+    if display[1][2][3]='X'
+    print('X has won')

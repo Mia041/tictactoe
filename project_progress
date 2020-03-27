@@ -1,0 +1,13 @@
+#Ask player to choose marker and order to play.
+def player_input():
+    Player_1=input("You are now Player_1. Do you want to be 'X' or 'O'?(Enter 'X' or 'O'):")
+    while Player_1.upper() not in 'XO':
+        Player_1=input("You are now Player_1. Do you want to be 'X' or 'O'?(Enter 'X' or 'O'):")
+    if Player_1.upper()=='X':
+        Player_2='O'
+    else:
+        Player_2='X'
+    print('Player_1 is '+ Player_1.upper())
+    print('Player_2 is ' + Player_2.upper())
+
+player_input()
