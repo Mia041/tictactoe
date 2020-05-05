@@ -1,0 +1,21 @@
+content : --
+
+submit new changes to github:
+    git add:
+        put changes to a staging agent
+    git commit -m "--":
+        put changes to local computer
+    git push:
+        push to github
+
+
+git show --(version #):
+    show past modifications
+git branch:
+    show branches
+git checkout (-b) (--):
+    create new branches
+git checkout (--):
+    be in the branch and check new changes
+git log:
+    show history changes
