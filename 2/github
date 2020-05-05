@@ -13,9 +13,13 @@ git show --(version #):
     show past modifications
 git branch:
     show branches
-git checkout (-b) (--):
-    create new branches
+git checkout -b (--):
+    create a new branch
 git checkout (--):
-    be in the branch and check new changes
+    be in the branch and see new changes
 git log:
     show history changes
+git diff:
+    to show what's changed specifically
+git status:
+    to show what's changed in a file basis
